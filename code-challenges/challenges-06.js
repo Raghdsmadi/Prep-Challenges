@@ -12,11 +12,15 @@
 //  
 
 const findMax = (arr)=>{
-    let max;
+    let max = arr[0];
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] > max) { max = arr[i]; } }
+
     // write your code here
     return max;
 }
 // -------------------------------------------------------------------------------------------------------
+
 
 // -------------------------------------------------------------------------------------------------------
 //  Challenge 02:
@@ -30,8 +34,10 @@ const findMax = (arr)=>{
 //  
 
 const sumNums = (arr)=>{
-    let sum;
-    // write your code here
+    let sum=0;
+    for (let i = 0; i < arr.length; i++) {
+        if(typeof(arr[i]) === 'string') arr[i]=0;
+        sum += arr[i]; }
     return sum;
 }
 // -------------------------------------------------------------------------------------------------------
