@@ -19,13 +19,12 @@
 
 const oddFiltration = (arr) => {
     // write your code here
-    let arrOdd = [];
-    for (let i = 0; i < arr.length; i++) {
-        if (arr[i] % 2 !== 0) {
-           arrOdd.push(arr[i]);
+    let finalOdd = arr.filter((odd)=>{
+        if(odd % 2 == 1){
+        return odd;
         }
-    }
-    return arrOdd;
+    })
+    return finalOdd;
     
 
 }
