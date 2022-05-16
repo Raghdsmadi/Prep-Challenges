@@ -14,9 +14,19 @@
 // Output: [50, 41, 32, 23, 14, 5, -4, 5, 14, 23, 32, 41, 50]
 //
 
-const recursionPattern = (int1, int2) => {
+const recursionPattern = (int1, int2, arr=[], i=0,s=0) => {
     // write your code here
-
+    
+arr[i] = int1;
+    i++
+    if (int1 > 0 && s == 0) {
+        recursionPattern(int1-int2,int2,arr,i,0);
+    } else if(int1 < arr[0]) {
+        recursionPattern(int1+int2,int2,arr,i,1);
+        }
+        else return arr;
+    
+    return arr;
 }
 // -------------------------------------------------------------------------------------------------------
 
