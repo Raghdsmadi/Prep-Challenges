@@ -16,16 +16,21 @@
 
 const recursionPattern = (int1, int2, arr=[], i=0,s=0) => {
     // write your code here
-    
-arr[i] = int1;
-    i++
-    if (int1 > 0 && s == 0) {
-        recursionPattern(int1-int2,int2,arr,i,0);
-    } else if(int1 < arr[0]) {
-        recursionPattern(int1+int2,int2,arr,i,1);
-        }
-        else return arr;
-    
+
+    let arr = [];
+    let result = int1 - int2;
+    arr.push(int1);
+    arr.push(result);
+    while (result >= 0) {
+        result = result - int2;
+        arr.push(result);
+        recursionPattern(result, int2);
+    }
+    while (result != int1) {
+        result = result + int2;
+        arr.push(result);
+    }
+
     return arr;
 }
 // -------------------------------------------------------------------------------------------------------
